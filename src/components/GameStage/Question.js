@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import Option from "./Option";
 import Steps from './Steps';
 import './Question.css'
-import { colors } from '../../data';
+import { colors, badgeColors, scoreUnit } from '../../data';
 
 
 const Question = (props) => {
-    const { question, current, setCurrent, cleanQuestion, setGameOver, setGameMode, setScore, score, setLoading } = props;
+    const { question, current, setCurrent, cleanQuestion, setGameOver, setGameMode, setScore, score, setLoading, totalScore, setTotalScore, correctCounts, setCorrectCounts } = props;
+
+
 
     const [answer, setAnswer] = useState(undefined);
     const [flipCard, setFlipCard] = useState(undefined)
@@ -17,17 +19,25 @@ const Question = (props) => {
     }
 
     const handleNext = () => {
+
         if (cleanQuestion.answerKey === answer) {
-            const newScore = score + 10;
+            // const newScore = score + 10;
+            // setScore(newScore);
+            const newScore = score + scoreUnit[question.difficulty];
+            // const newTotal = totalScore + scoreUnit[question.difficulty]
             setScore(newScore);
+            setCorrectCounts(correctCounts + 1);
+            // setTotalScore(newTotal);
         }
         if (current < 9 && answer !== undefined) {
             setAnswer(undefined);
             setFlipCard(undefined);
             setCurrent(current + 1);
+            setTotalScore(totalScore + scoreUnit[question.difficulty]);
         } else if (current >= 9 && answer !== undefined) {
             setAnswer(undefined);
             setFlipCard(undefined);
+            setTotalScore(totalScore + scoreUnit[question.difficulty]);
             delayGameOver();
         }
     }
@@ -43,10 +53,13 @@ const Question = (props) => {
     return (
         <div className="questionWrapper">
             <div className="questionBubble" >
+                <div className="badge" style={{ background: badgeColors[question.difficulty], position: "absolute", top: "-45px", left: 0 }}>{question.difficulty.toUpperCase()}</div>
+
                 <h1 style={{ padding: "0 30px", }}>{cleanQuestion.question}</h1>
             </div>
+            <div style={{ display: 'flex', marginTop: "45px", position: 'relative' }}>
 
-            <div style={{ display: 'flex', marginTop: "45px" }}>
+
                 {
                     cleanQuestion.options.map((option, i) => {
                         return (

@@ -1,5 +1,5 @@
 import './App.css';
-import Main from './components/Main/Main';
+import Main from './components/Main';
 import { getGradients } from './data';
 
 function App() {

@@ -10,15 +10,16 @@ const GameStage = (props) => {
     const [current, setCurrent] = useState(0);
     const [gameOver, setGameOver] = useState(false);
     const [score, setScore] = useState(0);
+    const [totalScore, setTotalScore] = useState(0);
+    const [correctCounts, setCorrectCounts] = useState(0);
 
     const background = `url(${cat[catIndex].img})`
     console.log(cat[catIndex].img)
 
     const cleanQuestion = () => {
         let question = questions[current]
-        let q = question.question.replaceAll("&quot;", "''");
-        q = q.replaceAll("&#039;", "'");
-        q = q.replaceAll("&rsquo;", "'");
+        let q = question.question.replaceAll("&quot;", "''").replaceAll("&#039;", "'").replaceAll("&rsquo;", "'");
+
 
         const setOptions = new Set(question.incorrect_answers);
 
@@ -28,9 +29,7 @@ const GameStage = (props) => {
 
         options.splice(answerIndex, 0, question.correct_answer);
         for (let i = 0; i < options.length; i++) {
-            options[i] = options[i].replaceAll("&quot;", '"');
-            options[i] = options[i].replaceAll("&#039;", "'");
-            options[i] = options[i].replaceAll("&rsquo;", "'")
+            options[i] = options[i].replaceAll("&quot;", '"').replaceAll("&#039;", "'").replaceAll("&rsquo;", "'")
         }
         return { "options": options, "answerKey": answerIndex, "question": q }
     }
@@ -54,10 +53,16 @@ const GameStage = (props) => {
                         setScore={setScore}
                         score={score}
                         setLoading={setLoading}
+                        totalScore={totalScore}
+                        setTotalScore={setTotalScore}
+                        correctCounts={correctCounts}
+                        setCorrectCounts={setCorrectCounts}
                     />
                     :
                     <GameOver
                         score={score}
+                        totalScore={totalScore}
+                        correctCounts={correctCounts}
                         setGameOver={setGameOver}
                         setGameMode={setGameMode}
                         setCategory={setCategory}

@@ -7,6 +7,19 @@ export const colors = [
     "#F9F871"
 ]
 
+export const badgeColors = {
+    "hard": "#C34A36",
+    "medium": "#FFC75F",
+    "easy": "#00C9A7"
+}
+
+export const scoreUnit = {
+    "hard": 3,
+    "medium": 2,
+    "easy": 1
+}
+
+
 export const gradients = [
     // "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)",
     // "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)",

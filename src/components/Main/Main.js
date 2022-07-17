@@ -9,7 +9,6 @@ import './Main.css'
 
 const Main = () => {
 
-
     const [gameMode, setGameMode] = useState(false);
     const [dashboard, setDashboard] = useState(false);
     const [category, setCategory] = useState(undefined);
@@ -17,14 +16,6 @@ const Main = () => {
     const [catDisplay, setCatDisplay] = useState(undefined);
     const [catIndex, setCatIndex] = useState(undefined)
     const [loading, setLoading] = useState(false);
-
-
-    // useEffect(() => {
-    //     setLoading(true);
-    //     setTimeout(() => {
-    //         setLoading(false)
-    //     }, 2000);
-    // }, [])
 
     return (
         <div className="mainWrapper">
