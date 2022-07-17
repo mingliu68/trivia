@@ -4,7 +4,6 @@ import './Category.css';
 const Category = (props) => {
     const { category, index, handleSelectCategory, selectedCat } = props;
 
-    // const img = `url(${category.img})`;
     const gradient = selectedCat !== category.id ?
         `linear-gradient(to right top, ${gradients[index][0]}, ${gradients[index][1]}, ${gradients[index][2]})`
         :

@@ -16,15 +16,11 @@ const Main = () => {
     const [questions, setQuestions] = useState([]);
     const [catDisplay, setCatDisplay] = useState(undefined);
 
-
-
-
     return (
         <div className="mainWrapper">
             {
                 gameMode === true ?
                     <GameStage
-                        category={category}
                         questions={questions}
                         catDisplay={catDisplay}
                     />
