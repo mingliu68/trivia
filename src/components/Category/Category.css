@@ -1,0 +1,43 @@
+.cardWrapper {
+    margin: 10px; 
+    width: 200px;
+    height: 150px;
+    
+}
+
+.cardInner {
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.cardImage {
+    /* background-size: cover; 
+    background-position: center center; */
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+.cardDesc {
+    /* background: #ffffff50; */
+    color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 600px) {
+    .cardWrapper {
+        width: 200px;
+    }
+    
+}
