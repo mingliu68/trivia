@@ -10,7 +10,30 @@ const Option = (props) => {
 
     const [youGotIt, setYouGotIt] = useState(undefined);
 
-    // const background = flipCard === undefined ? color : correct === true ? "#008F7A" : color;
+    // checking if the option contains words with too many characters
+    // drop the font size based on the max letter count per word
+    const getStyle = () => {
+        const optionStyle = { "opacity": 1 };
+        const optionArr = option.split(" ");
+        let maxCount = 0;
+
+        for (let i = 0; i < optionArr.length; i++) {
+            console.log(optionArr[i]);
+            if (optionArr[i].length > 20 && optionArr[i].length > maxCount) {
+                optionStyle.fontSize = "1.4em";
+                maxCount = optionArr[i].length;
+            }
+            else if (optionArr[i].length > 16 && optionArr[i].length > maxCount) {
+                optionStyle.fontSize = "1.6em";
+                maxCount = optionArr[i].length;
+            }
+            else if (optionArr[i].length > 13 && optionArr[i].length > maxCount) {
+                optionStyle.fontSize = "1.8em";
+                maxCount = optionArr[i].length;
+            }
+        }
+        return optionStyle;
+    }
 
     const handleOnClick = (e, i) => {
         if (answer === undefined) {
@@ -54,7 +77,7 @@ const Option = (props) => {
             <div className="optionInner" style={{ transform: flipCard === index ? "rotateY(180deg)" : "none" }}>
 
                 <div className="optionFront" style={{ background: color }}>
-                    <h1 ref={updateTextRef} style={{ opacity: 1 }}>{option}</h1>
+                    <h1 ref={updateTextRef} style={getStyle()}>{option}</h1>
                 </div>
                 <div className="optionBack" style={{ background: youGotIt === true ? "#008F7A" : youGotIt === false ? "#C34A36" : color }}>
                     <h1 >{youGotIt === true ? "CORRECT!!!" : youGotIt === false ? "WRONG!!!" : null}</h1>
