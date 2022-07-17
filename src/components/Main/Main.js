@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // components
 import GameStage from '../GameStage/GameStage';
 import Dashboard from '../Dashboard/Dashboard';
@@ -15,14 +15,43 @@ const Main = () => {
     const [category, setCategory] = useState(undefined);
     const [questions, setQuestions] = useState([]);
     const [catDisplay, setCatDisplay] = useState(undefined);
+    const [catIndex, setCatIndex] = useState(undefined)
+    const [loading, setLoading] = useState(false);
+
+
+    // useEffect(() => {
+    //     setLoading(true);
+    //     setTimeout(() => {
+    //         setLoading(false)
+    //     }, 2000);
+    // }, [])
 
     return (
         <div className="mainWrapper">
+            {
+                loading === true ?
+                    (
+                        <div className="loader-container">
+                            <div className="spinner"></div>
+                        </div>
+                    ) : null
+            }
+
+
             {
                 gameMode === true ?
                     <GameStage
                         questions={questions}
                         catDisplay={catDisplay}
+                        setGameMode={setGameMode}
+                        category={category}
+                        catIndex={catIndex}
+                        setCategory={setCategory}
+                        setQuestions={setQuestions}
+                        setCatDisplay={setCatDisplay}
+                        setCatIndex={setCatIndex}
+                        loading={loading}
+                        setLoading={setLoading}
                     />
                     :
                     dashboard === true ?
@@ -34,6 +63,9 @@ const Main = () => {
                             setGameMode={setGameMode}
                             setQuestions={setQuestions}
                             setCatDisplay={setCatDisplay}
+                            setCatIndex={setCatIndex}
+                            loading={loading}
+                            setLoading={setLoading}
                         />
             }
         </div>

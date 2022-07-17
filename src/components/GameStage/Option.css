@@ -5,14 +5,19 @@
     background-color: transparent;
     perspective: 1000px;
     cursor: pointer;
+    position: relative;
+}
 
+.optionWrapper:hover {
+    transform: translateY(5px);
+    transition: 0.3s;
 }
 
 .optionInner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 1s;
+    transition: transform 0.7s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
@@ -33,10 +38,8 @@
 
 .optionFront {
     background: var(--color-orange);
-
+    transition: all 1s;
 }
-
-
 
 .optionBack {
     transform: rotateY(180deg);

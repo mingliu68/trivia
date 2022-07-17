@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+.button {
+  margin: 10px;
+  padding: 20px 40px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: grey;
+  font-size: 30px;
+  font-weight: 700;
+  width: 300px;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(5px);
+  transition: 0.3s;
+  background-color: #666;
+}
+
+.button:active {
+  background-color: #333;
+  transform: translateY(6px);
+  
+}

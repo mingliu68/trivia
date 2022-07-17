@@ -3,12 +3,13 @@ import Category from './Category';
 import './SelectGame.css';
 
 const SelectGame = (props) => {
-    const { setCategory, selectedCat, setGameMode, setQuestions, setCatDisplay } = props;
+    const { setCategory, selectedCat, setGameMode, setQuestions, setCatDisplay, setCatIndex, loading, setLoading } = props;
 
-    const handleSelectCategory = (e, cat, catDisplay) => {
+    const handleSelectCategory = (e, cat, catDisplay, catIndex) => {
         // cat is the category id
         setCategory(cat);
         setCatDisplay(catDisplay)
+        setCatIndex(catIndex)
     }
 
     async function handleSetGameMode(e) {
@@ -23,32 +24,32 @@ const SelectGame = (props) => {
     async function fetchQuestions(url) {
         const rawQuestions = await fetch(url);
         const jsonQuestions = await rawQuestions.json();
-        console.log(jsonQuestions.results)
         return jsonQuestions.results;
     }
 
     return (
         <div className="selectGameWrapper">
-            {
-                category.map((item, i) => {
-                    return (
-                        <Category
-                            key={i}
-                            category={item}
-                            index={i}
-                            handleSelectCategory={handleSelectCategory}
-                            selectedCat={selectedCat}
-                        />
-                    )
-                })
-            }
+            <div className="selectGameWrapperInner">
+                {
+                    category.map((item, i) => {
+                        return (
+                            <Category
+                                key={i}
+                                category={item}
+                                index={i}
+                                handleSelectCategory={handleSelectCategory}
+                                selectedCat={selectedCat}
+                            />
+                        )
+                    })
+                }
+            </div>
             <div
                 style={{ cursor: "pointer", boxSizing: "border-box", padding: "10px 20px", display: "flex", color: "white", alignItems: "center", justifyContent: "center", fontweight: "700", fontSize: "30px", width: "200px", height: "150px", margin: "10px", borderRadius: "20px", background: "green" }}
                 onClick={handleSetGameMode}
             >
                 Let The Game Begin!
             </div>
-
         </div>
     )
 }
