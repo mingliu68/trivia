@@ -1,11 +1,12 @@
 import "./Question.css";
 import { gameOverMsgs } from "../../data";
+import { useEffect } from "react";
+import { myData } from '../../data';
 const GameOver = (props) => {
 
     const { score, totalScore, correctCounts, setGameOver, setGameMode, setCategory, setQuestions, setCatDisplay, setCatIndex, setSelectionMode } = props;
 
     const finalScore = Math.floor((score / totalScore) * 100);
-
 
     const handleButtonClick = (e, type) => {
 

@@ -19,6 +19,18 @@ export const scoreUnit = {
     "easy": 1
 }
 
+export const myData = {
+    "id": 0,
+    "userName": "MinaSkye",
+
+    "bestScore": { "category": "Animal", "score": 48, 'questionCount': 5 },
+    "scores": [
+        { "category": "Animal", "score": 48, 'questionCount': 5 },
+    ],
+
+
+}
+
 export const leaderBoard = [
     { "id": 0, "name": "Crapkin", "bestScore": 97 },
     { "id": 1, "name": "Scuttlebutt", "bestScore": 95 },

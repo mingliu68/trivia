@@ -62,6 +62,7 @@ const GameStage = (props) => {
                         setTotalScore={setTotalScore}
                         correctCounts={correctCounts}
                         setCorrectCounts={setCorrectCounts}
+
                     />
                     :
                     <GameOver

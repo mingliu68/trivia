@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import Option from "./Option";
 import Steps from './Steps';
 import './Question.css'
-import { colors, badgeColors, scoreUnit } from '../../data';
+import { colors, badgeColors, scoreUnit, myData } from '../../data';
 
 
 const Question = (props) => {
-    const { question, current, setCurrent, cleanQuestion, setGameOver, setGameMode, setScore, score, setLoading, totalScore, setTotalScore, correctCounts, setCorrectCounts } = props;
+    const { question, current, setCurrent, cleanQuestion, setGameOver, setScore, score, setLoading, totalScore, setTotalScore, correctCounts, setCorrectCounts } = props;
 
 
 
@@ -19,15 +19,11 @@ const Question = (props) => {
     }
 
     const handleNext = () => {
-
         if (cleanQuestion.answerKey === answer) {
-            // const newScore = score + 10;
-            // setScore(newScore);
+
             const newScore = score + scoreUnit[question.difficulty];
-            // const newTotal = totalScore + scoreUnit[question.difficulty]
             setScore(newScore);
             setCorrectCounts(correctCounts + 1);
-            // setTotalScore(newTotal);
         }
         if (current < 9 && answer !== undefined) {
             setAnswer(undefined);
@@ -35,7 +31,7 @@ const Question = (props) => {
             setCurrent(current + 1);
             setTotalScore(totalScore + scoreUnit[question.difficulty]);
         } else if (current >= 9 && answer !== undefined) {
-            // setAnswer(undefined);
+            // end of game, game over
             setFlipCard(undefined);
             setTotalScore(totalScore + scoreUnit[question.difficulty]);
             delayGameOver();
@@ -44,6 +40,7 @@ const Question = (props) => {
 
     const delayGameOver = () => {
         setLoading(true);
+
         const delay = () => {
             setTimeout(() => {
                 setGameOver(true);

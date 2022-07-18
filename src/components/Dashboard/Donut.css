@@ -1,0 +1,79 @@
+.donutWrapper {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 aut;
+    animation: donutfade 1s;
+}
+
+@keyframes donutfade {
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.donutRing {
+    stroke: #ebebeb;
+}
+
+.donutSegment {
+    transform-origin: center;
+    stroke: #845EC2;
+}
+
+.donutSegment_BestScore {
+    stroke: #FF9671;
+    border-radius: 50%;
+    border: #FF9671 5px solid;
+    animation: donut1 3s;
+}
+
+.donutScore {
+    animation: donutfadelong 1s;
+}
+
+@keyframes donutfadelong {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes donut1 {
+    0%{
+        stroke-dasharray: 0, 100;
+    }
+    100%{
+        stroke-dasharray: var(--best-score-value), var(--best-score-value-offset);
+    }
+}
+
+.donutText{
+    fill: #ff6200;
+}
+
+.donutText1 {
+    fill: #FF9671;
+}
+
+.donutScore {
+    font-size: 0.8em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    font-weight: bold;
+}
+
+.donutData {
+    font-size: 0.12em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    text-align: center;
+    text-anchor: middle;
+    color:#666;
+    fill: #666;
+    animation: donutfadelong 1s;
+}
