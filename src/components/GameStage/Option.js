@@ -57,20 +57,9 @@ const Option = (props) => {
 
     return (
         <div className="optionWrapper" onClick={(e) => handleOnClick(e, index)} >
-            <div
+            <div className="optionCheckMark"
                 style={{
-                    position: "absolute",
-                    width: "60px",
-                    height: "60px",
-                    borderRadius: "50%",
-                    backgroundColor: "green",
-                    top: "-30px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    zIndex: 2,
                     opacity: flipCard !== undefined && index === answerKey && answer !== answerKey ? 1 : 0,
-                    transition: "all 0.3s",
-                    border: "8px solid white"
                 }}>
                 <FontAwesomeIcon icon={faCheck} size="3x" style={{ paddingTop: "6px", color: "white" }} />
             </div>

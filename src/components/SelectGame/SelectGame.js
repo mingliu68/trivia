@@ -3,13 +3,14 @@ import Category from './Category';
 import './SelectGame.css';
 
 const SelectGame = (props) => {
-    const { setCategory, selectedCat, setGameMode, setQuestions, setCatDisplay, setCatIndex, loading, setLoading } = props;
+    const { setCategory, selectedCat, setGameMode, setQuestions, setCatDisplay, setCatIndex, loading, setLoading, setSelectionMode } = props;
 
     const handleSelectCategory = (e, cat, catDisplay, catIndex) => {
         // cat is the category id
         setCategory(cat);
         setCatDisplay(catDisplay)
         setCatIndex(catIndex)
+        setsetSelectionMode(false);
     }
 
     async function handleSetGameMode(e) {

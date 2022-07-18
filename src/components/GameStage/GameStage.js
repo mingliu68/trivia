@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Question from './Question';
 import GameOver from './GameOver';
+import "./GameStage.css";
 import { category as cat } from '../../data';
 
 
 const GameStage = (props) => {
-    const { questions, catDisplay, setGameMode, category, catIndex, setCategory, setQuestions, setCatDisplay, setCatIndex, loading, setLoading } = props;
+    const { questions, catDisplay, setGameMode, category, catIndex, setCategory, setQuestions, setCatDisplay, setCatIndex, loading, setLoading, setSelectionMode } = props;
 
     const [current, setCurrent] = useState(0);
     const [gameOver, setGameOver] = useState(false);
@@ -34,11 +35,15 @@ const GameStage = (props) => {
         return { "options": options, "answerKey": answerIndex, "question": q }
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
 
     return (
         <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-            <div style={{ color: "white", display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "250px", background: background, backgroundSize: "cover", backgroundPosition: "center center" }}>
-                <h1 style={{ background: "#00000050", padding: "10px 20px", fontSize: "40px" }}>{catDisplay}</h1>
+            <div className="heroImage" style={{ background: background, backgroundSize: "cover", backgroundPosition: "center center" }}>
+                <h1 style={{ background: "#00000050", padding: "10px 20px", fontSize: "40px", }}>{catDisplay}</h1>
             </div>
 
             {
@@ -69,6 +74,7 @@ const GameStage = (props) => {
                         setQuestions={setQuestions}
                         setCatDisplay={setCatDisplay}
                         setCatIndex={setCatIndex}
+                        setSelectionMode={setSelectionMode}
                     />
             }
 
