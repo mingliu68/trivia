@@ -19,6 +19,27 @@ export const scoreUnit = {
     "easy": 1
 }
 
+export const leaderBoard = [
+    { "id": 0, "name": "Crapkin", "bestScore": 97 },
+    { "id": 1, "name": "Scuttlebutt", "bestScore": 95 },
+    { "id": 2, "name": "Samovar", "bestScore": 92 },
+    { "id": 3, "name": "Appaloosa", "bestScore": 91 },
+    { "id": 4, "name": "Phialiform", "bestScore": 89 },
+    { "id": 5, "name": "Samarra", "bestScore": 85 },
+    { "id": 5, "name": "Highfalutin", "bestScore": 85 },
+    { "id": 5, "name": "Jest", "bestScore": 85 },
+    { "id": 8, "name": "Moschate", "bestScore": 82 },
+    { "id": 9, "name": "Hotfoot", "bestScore": 78 },
+    { "id": 9, "name": "Lambasted", "bestScore": 78 },
+    { "id": 11, "name": "Steezynat12345_", "bestScore": 77 },
+    { "id": 12, "name": "Tater", "bestScore": 76 },
+    { "id": 12, "name": "Rubberneck", "bestScore": 76 },
+    { "id": 12, "name": "Hullabaloo", "bestScore": 76 },
+    { "id": 15, "name": "Cerography", "bestScore": 75 },
+
+]
+
+
 export const gameOverMsgs = {
     10: "Ok, you are just showing off now!",
     9: "MENSA is awaiting your application.",
@@ -30,7 +51,7 @@ export const gameOverMsgs = {
     3: "Some message - level 3",
     2: "Some message - level 2",
     1: "Why are you even here?",
-    0: "You must be a genius! Even select 3rd choice on every question will get you some points!"
+    0: "You must be a genius! Even select 3rd choice on every question will get you more points!"
 
 }
 

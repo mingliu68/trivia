@@ -1,0 +1,77 @@
+.leaderboardWrapper  {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    min-width: 500px;
+    max-width: 45% ;
+    min-height: 650px;
+    border-radius: 30px;
+    background: #9B89B380;
+    padding:60px 30px 30px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 3px #00000070;
+}
+
+.leaderboardWrapper::before {
+    content: "LEADERBOARD";
+    position: absolute;
+    border: 5px solid white;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: #845EC2;
+    color: white;
+    font-weight: 700;
+}
+
+.scoreBarWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    
+}
+
+.avatarContainer {
+    width: 15%;
+    min-width: 60px;
+}
+
+.numberContainer {
+    min-width: 70px;
+}
+
+.numberContainer img {
+    width: 55px;
+    height: 55px;
+    transition: all 1s ease-in-out
+}
+
+.numberContainer img:hover {
+    transform: rotate(360deg)
+}
+
+.numberContainer h3 {
+    text-shadow: 0 2px 3px #00000050
+}
+.scoreBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #0081CF;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0;
+    box-shadow: 0 2px 3px #00000050;
+    text-shadow: 0 2px 3px #00000050;
+    margin: 0.6rem 0;
+}

@@ -4,27 +4,7 @@
   width: 100%;
 }
 
-.header {
-  height: var(--header-height);
-  width: 100%;
-  background-color:#4B4453 ;
-  color: white;
-  position: fixed;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  box-sizing: border-box;
-}
 
-.footer {
-  height: var(--footer-height);
-  width: 100%;
-  background-color: #AD5E00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 
 .button {
@@ -75,7 +55,68 @@
    cursor: pointer;
 }
 
+.header {
+  height: var(--header-height);
+  width: 100%;
+  background-color:#4B4453 ;
+  color: white;
+  position: fixed;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
 
+.footer {
+  height: var(--footer-height);
+  width: 100%;
+  background-color: #AD5E00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .footer-inner {
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 100%;
+  
+} */
+
+.footer span {
+color: white;
+font-weight: 500;
+}
+.footer span.heart{
+color: red;
+font-size: 16px;
+transform: scale(2, 2);
+display: inline-block;
+animation: blink 1.25s infinite;
+}
+
+span.diamond {
+    font-size:12px;
+    animation:none;
+    margin: 0 2px;
+}
+.footer span.copyright {
+  font-size: 16px;
+  display: inline-block;
+  /* transform: scale(1.5,1.5); */
+  padding-right: 3px
+}
+.footer span.at {
+  padding: 0 3px;
+}
+
+@keyframes blink{
+    to{opacity: .0;}
+  }
 
 
 /* .App-logo {
