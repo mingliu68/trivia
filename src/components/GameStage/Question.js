@@ -35,7 +35,7 @@ const Question = (props) => {
             setCurrent(current + 1);
             setTotalScore(totalScore + scoreUnit[question.difficulty]);
         } else if (current >= 9 && answer !== undefined) {
-            setAnswer(undefined);
+            // setAnswer(undefined);
             setFlipCard(undefined);
             setTotalScore(totalScore + scoreUnit[question.difficulty]);
             delayGameOver();
@@ -43,11 +43,17 @@ const Question = (props) => {
     }
 
     const delayGameOver = () => {
-        setGameOver(true);
         setLoading(true);
+        const delay = () => {
+            setTimeout(() => {
+                setGameOver(true);
+                setAnswer(undefined);
+            }, 1500)
+        }
+        delay();
         setTimeout(() => {
             setLoading(false);
-        }, 1000)
+        }, 3000)
     }
 
     return (

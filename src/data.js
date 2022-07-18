@@ -19,6 +19,20 @@ export const scoreUnit = {
     "easy": 1
 }
 
+export const gameOverMsgs = {
+    10: "Ok, you are just showing off now!",
+    9: "MENSA is awaiting your application.",
+    8: "Some message - level 8",
+    7: "Some message - level 7",
+    6: "Some message - level 6",
+    5: "Some message - level 5",
+    4: "Some message - level 4",
+    3: "Some message - level 3",
+    2: "Some message - level 2",
+    1: "Why are you even here?",
+    0: "You must be a genius! Even select 3rd choice on every question will get you some points!"
+
+}
 
 export const gradients = [
     // "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)",

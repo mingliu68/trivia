@@ -12,10 +12,12 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    background: rgba(0, 0, 0, 0.99);
+    background: rgba(0, 0, 0, 0.98);
     z-index: 1; 
     top: 0;
     left:0;
+    opacity: 0;
+    animation: opacity-animation 2s ease-in-out;
 }
 
 .spinner {
@@ -26,6 +28,18 @@
     border-radius: 50%;
     animation: spin-animation 1.2s linear infinite;
 
+}
+
+@keyframes opacity-animation {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 @keyframes spin-animation {

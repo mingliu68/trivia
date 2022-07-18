@@ -19,6 +19,7 @@ const Main = () => {
 
     return (
         <div className="mainWrapper">
+
             {
                 loading === true ?
                     (
