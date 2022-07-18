@@ -13,15 +13,9 @@ function App() {
 
   getGradients();
 
-  const handleAvatarClick = (e) => {
-    setDashboard(true);
-  }
-
-
-
   return (
     <div className="App">
-      <Header handleAvatarClick={handleAvatarClick} setGameMode={setGameMode} setSelectionMode={setSelectionMode} setDashboard={setDashboard} />
+      <Header setGameMode={setGameMode} setSelectionMode={setSelectionMode} setDashboard={setDashboard} />
       <Main dashboard={dashboard} setGameMode={setGameMode} setSelectionMode={setSelectionMode} gameMode={gameMode} selectionMode={selectionMode} />
       <Footer />
     </div>

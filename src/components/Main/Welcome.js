@@ -14,7 +14,7 @@ const Welcome = (props) => {
                 <div>
                     <div className="questionDialogWrapper">
                         <div className="questionDialog">
-                            <h1>Who was the first ever actor to play "The Doctor" on "Doctor Who"?</h1>
+                            <h1>In the Sci-Fi television show Doctor Who, who plays the Tenth Doctor?</h1>
 
                         </div>
                         <div className="answerDialog">

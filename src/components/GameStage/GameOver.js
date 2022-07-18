@@ -28,16 +28,17 @@ const GameOver = (props) => {
             <div className="gameOverBubble" >
                 <h1 style={{ padding: "0 30px", }}>{gameOverMsgs[Math.floor(finalScore / 10)]}</h1>
             </div>
-            <div style={{ display: 'flex', marginTop: "45px", position: 'relative' }}>
+            <div style={{ display: 'flex', marginTop: "45px", position: 'relative', flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
-                You answered {correctCounts} out of 10 questions correctly and  scored {finalScore} points!
-                <button className="button" onClick={e => handleButtonClick(e, "exit")}>Exit Game</button>
-                <button className="button" onClick={e => handleButtonClick(e, "new game")}>Start New Game</button>
-
+                <h2>You answered {correctCounts} out of 10 questions correctly and  scored {finalScore} points!</h2>
+                <div style={{ display: "flex" }}>
+                    <button className="button" onClick={e => handleButtonClick(e, "exit")}>Exit Game</button>
+                    <button className="button" onClick={e => handleButtonClick(e, "new game")}>Start New Game</button>
+                </div>
             </div>
 
 
-        </div>
+        </div >
 
 
 

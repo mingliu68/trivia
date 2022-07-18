@@ -1,17 +1,21 @@
 const Header = (props) => {
 
-    const { handleAvatarClick, setSelectionMode, setGameMode, setDashboard } = props
+    const { setSelectionMode, setGameMode, setDashboard } = props
 
-    const handleLogoClick = e => {
+    const handleClick = (e, type) => {
         setSelectionMode(false);
         setGameMode(false);
-        setDashboard(false);
+        if (type === "dashboard") {
+            setDashboard(true);
+        } else if (type === "logo") {
+            setDashboard(false);
+        }
     }
 
     return (
         <header className="header">
-            <h1 onClick={handleLogoClick} style={{ cursor: "pointer" }}>TRIVIAAAAAAA!!!</h1>
-            <div className="avatar" onClick={handleAvatarClick}>M</div>
+            <h1 onClick={e => handleClick(e, "logo")} style={{ cursor: "pointer" }}>TRIVIAAAAAAA!!!</h1>
+            <div className="avatar" onClick={e => handleClick(e, "dashboard")}>M</div>
         </header>
     )
 }

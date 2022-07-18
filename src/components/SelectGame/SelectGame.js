@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { category } from '../../data';
 import Category from './Category';
 import './SelectGame.css';
@@ -10,7 +11,6 @@ const SelectGame = (props) => {
         setCategory(cat);
         setCatDisplay(catDisplay)
         setCatIndex(catIndex)
-        setsetSelectionMode(false);
     }
 
     async function handleSetGameMode(e) {
@@ -19,6 +19,7 @@ const SelectGame = (props) => {
             const questions = await fetchQuestions(url);
             await setQuestions(questions);
             setGameMode(true);
+            setSelectionMode(false)
         }
     }
 
@@ -27,6 +28,13 @@ const SelectGame = (props) => {
         const jsonQuestions = await rawQuestions.json();
         return jsonQuestions.results;
     }
+
+    useEffect(() => {
+        setCategory(undefined);
+        setCatDisplay(undefined)
+        setCatIndex(undefined)
+    }, [])
+
 
     return (
         <div className="selectGameWrapper">
