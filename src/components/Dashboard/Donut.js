@@ -10,26 +10,26 @@ const Donut = (props) => {
 
     return (
         <div className="donutWrapper">
-            <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+            <svg width="100%" height="100%" viewBox="0 0 40 40" className="donut">
 
                 <circle className="donutHole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
-                <circle className="donutRing" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+                <circle className="donutRing" cx="20" cy="20" r="15.91549430918954" fill="transparent" strokeWidth="3.5"></circle>
                 <circle
-                    className="donutSegment donutSegment_BestScore"
+                    className="donutSegment"
                     cx="20" cy="20" r="15.91549430918954"
                     fill="transparent"
-                    stroke-width="3.5"
-                    stroke-dasharray={dashValue}
-                    stroke-dashoffset="25"
-                    stroke-linecap="round"
+                    strokeWidth="3.5"
+                    strokeDasharray={dashValue}
+                    strokeDashoffset="25"
+                    strokeLinecap="round"
                 >
                 </circle>
-                <g class="donutText donutText1">
+                <g className="donutText">
                     <text y="50%" transform="translate(0, 2)">
-                        <tspan x="50%" text-anchor="middle" className="donutScore">{value}</tspan>
+                        <tspan x="50%" textAnchor="middle" className="donutScore">{value}</tspan>
                     </text>
                     <text y="60%" transform="translate(0, 2)">
-                        <tspan x="50%" text-anchor="middle" className="donutData">{data}</tspan>
+                        <tspan x="50%" textAnchor="middle" className="donutData">{data}</tspan>
                     </text>
                 </g>
             </svg>

@@ -4,7 +4,14 @@
   width: 100%;
 }
 
-
+@keyframes wrapperFade {
+  0% {
+    opacity: .2;
+  }
+  100% {
+      opacity: 1;
+  }
+}
 
 
 .button {

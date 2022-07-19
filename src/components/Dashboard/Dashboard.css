@@ -1,4 +1,32 @@
 .dashboardWrapper {
-    max-width: 1100px;
+    max-width: 1200px;
+    animation: wrapperFade 1s;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+    padding: 30px;
+    
+}
+
+.navPanelWrapper {
+    height: calc((100vh - var(--header-height) - var(--footer-height) - 60px ));
+    width: 450px;
+    min-width: 300px;
+    background: #845EC2;
+    border-radius: 20px;
+    margin: 0 50px;
+    box-shadow: 0 0 10px #00000080;
+}
+
+.contentWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentInner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 

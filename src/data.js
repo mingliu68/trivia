@@ -23,9 +23,26 @@ export const myData = {
     "id": 0,
     "userName": "MinaSkye",
 
-    "bestScore": { "category": "Animal", "score": 48, 'questionCount': 5 },
+    "bestScore": { "category": "Animal", "score": 66, 'questionCount': 7 },
     "scores": [
         { "category": "Animal", "score": 48, 'questionCount': 5 },
+        { "category": "Animal", "score": 32, 'questionCount': 4 },
+        { "category": "Animal", "score": 48, 'questionCount': 5 },
+        { "category": "Animal", "score": 39, 'questionCount': 4 },
+        { "category": "Animal", "score": 62, 'questionCount': 6 },
+        { "category": "Animal", "score": 52, 'questionCount': 5 },
+        { "category": "Animal", "score": 66, 'questionCount': 7 },
+        { "category": "Animal", "score": 12, 'questionCount': 1 },
+        { "category": "Animal", "score": 15, 'questionCount': 1 },
+        { "category": "Animal", "score": 25, 'questionCount': 2 },
+        { "category": "Animal", "score": 30, 'questionCount': 3 },
+        { "category": "Animal", "score": 28, 'questionCount': 3 },
+        { "category": "Animal", "score": 18, 'questionCount': 2 },
+        { "category": "Animal", "score": 42, 'questionCount': 4 },
+        { "category": "Animal", "score": 19, 'questionCount': 2 },
+        { "category": "Animal", "score": 48, 'questionCount': 5 },
+
+
     ],
 
 

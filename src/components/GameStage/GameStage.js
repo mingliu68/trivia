@@ -41,7 +41,7 @@ const GameStage = (props) => {
 
 
     return (
-        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+        <div className="gameStageWrapper" >
             <div className="heroImage" style={{ background: background, backgroundSize: "cover", backgroundPosition: "center center" }}>
                 <h1 style={{ background: "#00000050", padding: "10px 20px", fontSize: "40px", }}>{catDisplay}</h1>
             </div>

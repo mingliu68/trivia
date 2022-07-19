@@ -1,40 +1,27 @@
 .donutWrapper {
     width: 100%;
     font-size: 16px;
-    margin: 0 aut;
-    animation: donutfade 1s;
-}
-
-@keyframes donutfade {
-    0% {
-        opacity: .2;
-    }
-    100% {
-        opacity: 1;
-    }
+    margin: 0 auto;
+    animation: wrapperFade 1s;
+    min-width: 300px;
 }
 
 .donutRing {
-    stroke: #ebebeb;
+    stroke: #d3d2d2;
 }
 
 .donutSegment {
     transform-origin: center;
-    stroke: #845EC2;
-}
-
-.donutSegment_BestScore {
     stroke: #FF9671;
-    border-radius: 50%;
     border: #FF9671 5px solid;
-    animation: donut1 3s;
+    animation: donutAnimation 3s;
 }
 
 .donutScore {
-    animation: donutfadelong 1s;
+    animation: donutFade 1s;
 }
 
-@keyframes donutfadelong {
+@keyframes donutFade {
     0% {
         opacity: 0;
     }
@@ -43,7 +30,7 @@
     }
 }
 
-@keyframes donut1 {
+@keyframes donutAnimation {
     0%{
         stroke-dasharray: 0, 100;
     }
@@ -52,11 +39,7 @@
     }
 }
 
-.donutText{
-    fill: #ff6200;
-}
-
-.donutText1 {
+.donutText {
     fill: #FF9671;
 }
 

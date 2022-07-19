@@ -1,3 +1,12 @@
+.gameStageWrapper {
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    animation: wrapperFade 2s;
+}
+
 .heroImage {
 
         color: white ;
